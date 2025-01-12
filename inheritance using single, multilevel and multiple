@@ -1,0 +1,57 @@
+# inheritance-using-single-multilevel-and-multiple
+// Base class for Single and Multilevel Inheritance
+class Animal {
+    void eat() {
+        System.out.println("Animal can eat.");
+    }
+}
+
+// Class inheriting from Animal (Single Inheritance)
+class Mammal extends Animal {
+    void walk() {
+        System.out.println("Mammal can walk.");
+    }
+}
+
+// Class inheriting from Mammal (Multilevel Inheritance)
+class Human extends Mammal {
+    void speak() {
+        System.out.println("Human can speak.");
+    }
+}
+
+// Interface for Multiple Inheritance
+interface Athlete {
+    void play();
+}
+
+// Class inheriting from Human and implementing Athlete (Multiple Inheritance using interface)
+class SportsPerson extends Human implements Athlete {
+    public void play() {
+        System.out.println("SportsPerson can play sports.");
+    }
+}
+
+public class InheritanceExample {
+    public static void main(String[] args) {
+        // Create an object of SportsPerson
+        SportsPerson sp = new SportsPerson();
+
+        // Access methods from Animal class (Single Inheritance)
+        sp.eat();
+
+        // Access methods from Mammal class (Multilevel Inheritance)
+        sp.walk();
+
+        // Access methods from Human class (Multilevel Inheritance)
+        sp.speak();
+
+        // Access methods from Athlete interface (Multiple Inheritance)
+        sp.play();
+    }
+}
+output:
+Animal can eat.
+Mammal can walk.
+Human can speak.
+SportsPerson can play sports.
